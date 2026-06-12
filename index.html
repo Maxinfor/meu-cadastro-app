@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cadastro App</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        body { font-family: sans-serif; background: #f0f2f5; margin: 0; padding: 20px; display: flex; justify-content: center; }
         .container { width: 100%; max-width: 500px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #333; margin-top: 0; }
+        h2 { text-align: center; color: #333; }
         input { width: 100%; margin-bottom: 15px; padding: 15px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 16px; }
         button { width: 100%; padding: 15px; background: #4285f4; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; }
-        button:active { background: #357ae8; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h2>Cadastro</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSezJZOAQ3tby4svnIh57yBh9Dqgc8TOX01hCEm-ViyFRk8vhA/formResponse" method="POST" target="hidden_iframe">
+    <!-- Removi o target="hidden_iframe" para garantir o envio -->
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSezJZOAQ3tby4svnIh57yBh9Dqgc8TOX01hCEm-ViyFRk8vhA/formResponse" method="POST">
         
         <input type="text" name="entry.1843336496" placeholder="Nome" required>
         <input type="tel" name="entry.669818817" placeholder="Telefone" required>
@@ -30,11 +30,6 @@
     </form>
 </div>
 
-<iframe name="hidden_iframe" style="display:none;" onload="if(submitted) {alert('Enviado com sucesso!'); window.location.reload();}"></iframe>
-
-<script type="text/javascript">
-    var submitted = false;
-</script>
 <script>
     async function buscarCEP() {
         const cep = document.getElementById('cep').value.replace(/\D/g, '');
@@ -46,6 +41,5 @@
         }
     }
 </script>
-
 </body>
 </html>
